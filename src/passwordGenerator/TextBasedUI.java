@@ -6,6 +6,13 @@ public class TextBasedUI implements UserInterface {
     Scanner scanner = new Scanner(System.in);
 
     @Override
+    public int getPasswordLength() {
+        System.out.println("How many characters do you want your password to have?" +
+                           "(Enter a number between 4 and 100.)");
+        return scanner.nextInt();
+    }
+
+    @Override
     public boolean useLowercase() {
         System.out.println("Do you want to include lowercase characters? (y/n)");
         String input = scanner.nextLine();

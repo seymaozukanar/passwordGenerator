@@ -70,6 +70,7 @@ public class App {
         TextBasedUI ui = new TextBasedUI();
         App app = new App();
 
+        int passwordLength = ui.getPasswordLength();
         boolean useLowercase = ui.useLowercase();
         boolean useUppercase = ui.useUppercase();
         boolean useNumbers = ui.useNumbers();
@@ -78,7 +79,7 @@ public class App {
         String password;
 
         do {
-            password = app.generatePassword(20, useLowercase, useUppercase, useNumbers, useSpecialChars);
+            password = generatePassword(passwordLength, useLowercase, useUppercase, useNumbers, useSpecialChars);
             isPasswordValid = app.isValid(password, useLowercase, useUppercase, useNumbers, useSpecialChars);
         } while (!isPasswordValid);
 
